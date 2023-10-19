@@ -2,10 +2,8 @@ import random
 import time
 money = 5000
 
-
 def spin():
     return random.choice(["🍋", "🍒", "7️⃣", "🐻", "🔔"])
-
 
 print("00도박장에 오신 것을 환영합니다")
 while(True):
