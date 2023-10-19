@@ -118,11 +118,11 @@ while(True):
                 result2 = spin()
                 result3 = spin()
                 print(result1)
-                time.sleep(1)
+                time.sleep(0.5)
                 print(" ", result2)
                 time.sleep(1)
                 print(" ", " ", result3)
-                time.sleep(1)
+                time.sleep(1.5)
                 print(result1, result2, result3)
                 if result1 == result2 or result2 == result3 or result1 == result3:
                     print("🎉당첨되셨습니다 2배 축하합니다🎉")
