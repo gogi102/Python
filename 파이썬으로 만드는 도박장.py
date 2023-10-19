@@ -124,12 +124,12 @@ while(True):
                 print(" ", " ", result3)
                 time.sleep(1)
                 print(result1, result2, result3)
-                if result1 == result2 or result2 == result3:
+                if result1 == result2 or result2 == result3 or result1 == result3:
                     print("🎉당첨되셨습니다 2배 축하합니다🎉")
-                    money = c*2
+                    money = money+c*2
                 elif result1 == result2 and result2 == result3:
                     print("🎰잭팟입니다 5배 축하드립니다🎰")
-                    money = c*5
+                    money = money+c*5
                 else:
                     print("💣꽝입니다 다음 기회에....💣")
                 print(
