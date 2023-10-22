@@ -106,13 +106,12 @@ while True:
                             if dealer_score > 16:
                                 if dealer_score > 21:
                                     dealer_score = score_sum(dealer_card)
-                                    print("딜러가 Bust 되었습니다")
-                                    print("게임을 승리 하였습니다")
-                                    print("딜러 점수: ", dealer_score)
-                                    print("내 점수: ", my_score)
-                                    print(
-                                        "-------------------------------------------------------------------------------------------------"
-                                    )
+                                    if one_more_card == 11:
+                                        dealer_card.remove(11)
+                                        dealer_card.append(1)
+                                        dealer_score = score_sum(dealer_card)
+                                    if dealer_score > 16:
+                                        break
 
                                     break
                                 else:
@@ -125,13 +124,13 @@ while True:
                             if my_score == 21:
                                 print("블랙잭입니다.")
                                 money = money + b * 3
+                            money = money + b * 2
                             print("게임에서 승리하였습니다")
                             print("내 점수: ", my_score)
                             print("딜러 점수: ", dealer_score)
                             print(
                                 "-------------------------------------------------------------------------------------------------"
                             )
-                            money = money + b * 2
                         elif my_score == dealer_score:
                             if my_score == 21:
                                 print("블랙잭입니다.")
@@ -145,7 +144,7 @@ while True:
                         else:
                             if dealer_score == 21:
                                 print("딜러의 블랙잭입니다")
-                            print("게임에서 패배하셨습니다")
+                            print("딜러가 승리하였습니다")
                             print("딜러 점수: ", dealer_score)
                             print("내 점수: ", my_score)
                             print(
@@ -197,7 +196,8 @@ while True:
                                     "-------------------------------------------------------------------------------------------------"
                                 )
                                 if dealer_score == 21:
-                                    print("블랙잭입니다")
+                                    print("딜러가 블랙잭입니다")
+                                    print("딜러가 승리하였습니다")
                                     print("내 점수는", my_score, "입니다")
                                     print("딜러 점수: ", dealer_score)
                                     print(
