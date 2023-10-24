@@ -17,7 +17,8 @@ print(
 while True:
     total_end = input("도박장을 이용하시려면 rr 나가시려면 gg를 눌러주세요(대소문자 상관 X) :")
     if total_end == "rr" or total_end == "RR":
-        recharge_money = int(input("게임 머니 충전하시려면 1을 눌러주세요 그렇지 않으면 다른숫자를 눌러주세요"))
+        recharge_money = int(
+            input("게임 머니 충전하시려면 1을 눌러주세요 그렇지 않으면 다른숫자를 눌러주세요"))
         if money < 0:
             money += 1
         print("현재 게임 머니가", money, "원 있습니다")
@@ -124,7 +125,7 @@ while True:
                             money = money + b * 2
                             if my_score == 21:
                                 print("블랙잭입니다.")
-                                money = money + b * 2   
+                                money = money + b * 2
                             print("게임에서 승리하였습니다")
                             print("내 점수: ", my_score)
                             print("딜러 점수: ", dealer_score)
@@ -219,7 +220,7 @@ while True:
                 else:
                     break
                 if money == 1:
-                    print("돈이 모자라 처음으로 이동합니다")
+                    print("파산하여 처음으로 이동합니다")
                     print(
                         "-------------------------------------------------------------------------------------------------"
                     )
@@ -243,7 +244,9 @@ while True:
                     continue
                 else:
                     print("옳지않은 요청입니다 도박장을 종료합니다")
+                    break
                 money -= 1
+
         elif game == 2:
             if money == 0:
                 print("게임 머니가 부족합니다")
@@ -261,16 +264,17 @@ while True:
                     "-------------------------------------------------------------------------------------------------"
                 )
                 print("현재 게임머니는", money, "원 있습니다")
-                c = int(input("베팅 하십시오: "))
+                c = int(input("베팅 하십시오 000을 입력하면 올인입니다: "))
                 if c > money:
                     print("게임 머니가 부족 합니다")
                     break
                 if money == 0:
                     print("게임 머니가 부족합니다")
                     break
-                elif c == money:
+                elif c == 000 or c == money:
                     print("게임 머니 올인 입니다")
-                    money -= c
+                    c = money
+                    money -= money
                     money += 1
                     print("남은 게임머니는 0원 입니다")
                 elif c == 0:
@@ -294,12 +298,13 @@ while True:
                 print(" ", " ", result3)
                 time.sleep(1.5)
                 print(result1, result2, result3)
-                if result1 == result2 or result2 == result3 or result1 == result3:
-                    print("🎉당첨되셨습니다 2배 축하합니다🎉")
-                    money = money + c * 2
-                elif result1 == result2 and result2 == result3:
+                if result1 == result2 and result2 == result3:
                     print("🎰잭팟입니다 5배 축하드립니다🎰")
                     money = money + c * 5
+                elif result1 == result2 or result2 == result3 or result1 == result3:
+                    print("🎉당첨되셨습니다 2배 축하합니다🎉")
+                    money = money + c * 2
+
                 else:
                     print("💣꽝입니다 다음 기회에....💣")
                 print(
@@ -317,17 +322,22 @@ while True:
                 )
                 game_end1 = input("다른게임을 이용하시려면 s 이 게임을 계속하시려면 c를 쳐주세요")
                 if game_end1 == "s":
+                    money -= 1
                     print(
                         "-------------------------------------------------------------------------------------------------"
                     )
                     break
                 elif game_end1 == "c":
+                    money -= 1
                     print(
                         "-------------------------------------------------------------------------------------------------"
                     )
                     continue
                 else:
                     print("옳지않은 요청입니다 도박장을 종료합니다")
+                    break
+                money -= 1
+
         elif game == 3:
             if money == 0:
                 print("게임 머니가 부족합니다")
