@@ -48,7 +48,7 @@ while True:
                 )
                 print("만약 카드 점수가 21점을 초과하게 되면 Bust되면서 게임을 패배하게 됩니다")
                 print("카드는 stand로 뽑기를 멈출 수 있고 hit로 계속 카드를 뽑을 수 있습니다")
-                print("만약 게임에서 승리 할 경우 베팅하였던 금액에 2배를 블랙잭으로 승리 할 경우 3배를 돌려드립니다")
+                print("만약 게임에서 승리 할 경우 베팅하였던 금액에 2배를 블랙잭으로 승리 할 경우 4배를 돌려드립니다")
                 print(
                     "-------------------------------------------------------------------------------------------------"
                 )
@@ -121,10 +121,10 @@ while True:
                     def winner(my_score, dealer_score):
                         global money
                         if my_score > dealer_score:
+                            money = money + b * 2
                             if my_score == 21:
                                 print("블랙잭입니다.")
-                                money = money + b * 3
-                            money = money + b * 2
+                                money = money + b * 2   
                             print("게임에서 승리하였습니다")
                             print("내 점수: ", my_score)
                             print("딜러 점수: ", dealer_score)
@@ -169,7 +169,7 @@ while True:
                                     if my_score == 21:
                                         print("블랙잭입니다")
                                         print("게임을 승리 하였습니다")
-                                        money = money + b * 3
+                                        money = money + b * 4
                                         print("딜러 점수: ", dealer_score)
                                         print("내 점수: ", my_score)
                                         print(
