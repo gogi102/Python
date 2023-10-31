@@ -15,18 +15,28 @@ for i in range(1,all_chance+1):
         mutd_score += 1
         print("맨유의",random.choice(mutd_player_choice),"선수가 골을 넣었습니다")
         print("맨유", " ", mutd_score, ":", mcty_score, " ", "맨시티")
+        print("-------------------------------------------------------------------------------------------------")
         time.sleep(2) 
     elif attack_point == 2:
         mcty_score += 1
         print("맨시티의",random.choice(mcty_player_choice),"선수가 골을 넣었습니다")
         print("맨유", " ", mutd_score, ":", mcty_score, " ", "맨시티")
+        print("-------------------------------------------------------------------------------------------------")
         time.sleep(2)
     elif attack_point == 3:
         print("맨유의",random.choice(mutd_player_choice),"선수가 골 찬스를 날렸습니다") 
         print("맨유", " ", mutd_score, ":", mcty_score, " ", "맨시티")
+        print("-------------------------------------------------------------------------------------------------")
         time.sleep(2)  
     elif attack_point == 4:
         print("맨시티의",random.choice(mcty_player_choice),"선수가 골 찬스를 날렸습니다")
         print("맨유", " ", mutd_score, ":", mcty_score, " ", "맨시티")
-        time.sleep(2)       
+        print("-------------------------------------------------------------------------------------------------")
+        time.sleep(2)  
+if mcty_score > mutd_score:
+    print("맨시티가 승리하였습니다")        
+elif mutd_score > mcty_score:
+    print("맨유가 승리하였습니다")
+else:
+    print("무승부 입니다")             
 
