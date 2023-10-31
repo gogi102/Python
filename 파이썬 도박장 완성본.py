@@ -95,8 +95,8 @@ while True:
                             score += card
                         return score
 
-                    # 카드 뽑기
-                    card_list = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+                    # 카드 뽑기 A는 1 kqj는 10
+                    card_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
                     dealer_card = random.sample(card_list, 2)
                     my_card = random.sample(card_list, 2)
                     print("나의 카드는", my_card, "입니다")
@@ -218,12 +218,12 @@ while True:
                                 stand_hit = input("stand 할 것인가? hit 할 것인가?")
 
                     result(my_score, dealer_score)
-                #더 ㄱ?
-                want_game = input("게임을 시작하시겠습니까? y 아니면 n(대소문자 상관 X) :")
-                if want_game == "y" or want_game == "Y":
+                #겜 ㄱ?
+                blackjack_game = input("게임을 시작하시겠습니까? y 아니면 n(대소문자 상관 X) :")
+                if blackjack_game == "y" or blackjack_game == "Y":
                     print("블랙잭 게임을 시작합니다")
                     first_game()
-                elif want_game == "n" or want_game == "N":
+                elif blackjack_game == "n" or blackjack_game == "N":
                     print("블랙잭 게임을 종료합니다.")
                     break
                 else:
