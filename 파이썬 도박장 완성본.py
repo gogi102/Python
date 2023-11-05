@@ -96,7 +96,7 @@ while True:
                         return score
 
                     # 카드 뽑기 A는 1 kqj는 10
-                    card_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+                    card_list = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
                     dealer_card = random.sample(card_list, 2)
                     my_card = random.sample(card_list, 2)
                     print("나의 카드는", my_card, "입니다")
